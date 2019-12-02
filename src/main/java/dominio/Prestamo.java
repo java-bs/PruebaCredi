@@ -1,14 +1,23 @@
 
 package dominio;
 
+import java.math.BigDecimal;
+
 public class Prestamo {
-    public double monto;
+    public BigDecimal monto;
     public int plazoEnMeses;    
     public int cantidadCuotas;
-    public double tasa;
+    public BigDecimal tasa;
     public byte [] documentos;
 
-    public double getMonto() {
+    public String toString(){
+        return "Monto: " + this.monto +
+           " // cantidad de cuotas: " + this.cantidadCuotas +
+           " // Plazo en meses: " + this.plazoEnMeses +
+           " // Tasa: " + this.tasa;
+    }
+    
+    public BigDecimal getMonto() {
         return monto;
     }
 
@@ -20,7 +29,7 @@ public class Prestamo {
         return cantidadCuotas;
     }
 
-    public double getTasa() {
+    public BigDecimal getTasa() {
         return tasa;
     }
 
@@ -28,7 +37,7 @@ public class Prestamo {
         return documentos;
     }
 
-    public void setMonto(double monto) {
+    public void setMonto(BigDecimal monto) {
         this.monto = monto;
     }
 
@@ -40,7 +49,7 @@ public class Prestamo {
         this.cantidadCuotas = cantidadCuotas;
     }
 
-    public void setTasa(double tasa) {
+    public void setTasa(BigDecimal tasa) {
         this.tasa = tasa;
     }
 

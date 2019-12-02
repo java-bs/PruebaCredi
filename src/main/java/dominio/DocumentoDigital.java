@@ -1,15 +1,17 @@
 package dominio;
 
+import java.util.Date;
+
 public class DocumentoDigital {
     public String nombre;
-    public int fechaDeCarga;    
+    public Date fechaDeCarga;    
     public Byte imagen;
 
     public String getNombre() {
         return nombre;
     }
 
-    public int getFechaDeCarga() {
+    public Date getFechaDeCarga() {
         return fechaDeCarga;
     }
 
@@ -21,7 +23,7 @@ public class DocumentoDigital {
         this.nombre = nombre;
     }
 
-    public void setFechaDeCarga(int fechaDeCarga) {
+    public void setFechaDeCarga(Date fechaDeCarga) {
         this.fechaDeCarga = fechaDeCarga;
     }
 

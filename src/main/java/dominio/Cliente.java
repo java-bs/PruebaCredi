@@ -1,15 +1,38 @@
 package dominio;
+import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class Cliente {
     
-    public int dni = 0;
-    public String nombreApellido;
-    public double ingresos;
-    public int prestamo[];
-    public int cuentaBancaria;
-    public byte dniDigitalizado;
-    public String domicilio;
+    private int dni = 0;
+    private String nombreApellido;
+    private BigDecimal ingresos;
+    private Prestamo[] prestamo;
+    private int cuentaBancaria;
+    private DocumentoDigital[] documentoDigital;
+    private Domicilio domicilio;
+    private String nombre;
 
+    public Cliente(){
+        System.out.println("Creación Cliente");
+    }
+    
+    
+    public String toString(){
+        return " DNI: " + this.dni +
+           " // Nombre y Apellido: " + this.nombreApellido +
+           " // Ingresos: " +  this.ingresos +
+           " // Cuenta bancaria: " + this.cuentaBancaria +
+           " // Documentos: " + this.documentoDigital +
+           " // Domicilio: " + this.domicilio +
+           " // Prestamo : " + this.prestamo;
+    }
+    
+    public Cliente(String nombreNuevo){
+        System.out.println("Creación Cliente: " +  nombreNuevo);
+        this.nombre = nombreNuevo;
+    }
+    
     public int getDni() {
         return dni;
     }
@@ -26,20 +49,12 @@ public class Cliente {
         this.nombreApellido = nombreApellido;
     }
 
-    public double getIngresos() {
+    public BigDecimal getIngresos() {
         return ingresos;
     }
 
-    public void setIngresos(double ingresos) {
+    public void setIngresos(BigDecimal ingresos) {
         this.ingresos = ingresos;
-    }  
-
-    public int[] getPrestamo() {
-        return prestamo;
-    }
-
-    public void setPrestamo(int[] prestamo) {
-        this.prestamo = prestamo;
     }
 
     public int getCuentaBancaria() {
@@ -50,26 +65,38 @@ public class Cliente {
         this.cuentaBancaria = cuentaBancaria;
     }
 
-    public byte getDniDigitalizado() {
-        return dniDigitalizado;
+    public DocumentoDigital[] getDocumentoDigital() {
+        return documentoDigital;
     }
 
-    public void setDniDigitalizado(byte dniDigitalizado) {
-        this.dniDigitalizado = dniDigitalizado;
+    public void setDocumentoDigital(DocumentoDigital[] documentoDigital) {
+        this.documentoDigital = documentoDigital;
+    }
+    
+    public Prestamo[] getPrestamo() {
+        return prestamo;
     }
 
-    public String getDomicilio() {
+    public Domicilio getDomicilio() {
         return domicilio;
     }
 
-    public void setDomicilio(String domicilio) {
+    public void setPrestamo(Prestamo[] prestamo) {
+        this.prestamo = prestamo;
+    }
+
+    public void setDomicilio(Domicilio domicilio) {
         this.domicilio = domicilio;
-    }    
-         
+    }
+    
     public void cambiarDomicilio(String nuevoDomicilio){               
     }
     
     public void actualizarIngresos(byte nuevoDocumento, double nuevoMonto){      
     } 
+
+    public void setPrestamo(Prestamo miPrestamo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
