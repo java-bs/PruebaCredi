@@ -10,11 +10,16 @@ public class Prestamo {
     public BigDecimal tasa;
     public byte [] documentos;
 
-    public String toString(){
-        return "Monto: " + this.monto +
-           " // cantidad de cuotas: " + this.cantidadCuotas +
-           " // Plazo en meses: " + this.plazoEnMeses +
-           " // Tasa: " + this.tasa;
+    @Override
+    public String toString() {
+        return "Prestamo{" + "monto=" + monto + ", plazoEnMeses=" + plazoEnMeses +
+               ", cantidadCuotas=" + cantidadCuotas + ", tasa=" + tasa + 
+               ", documentos=" + documentos + '}';
+    }
+
+    public Prestamo(BigDecimal monto, int cantidadCuotas) {
+        this.monto = monto;
+        this.cantidadCuotas = cantidadCuotas;
     }
     
     public BigDecimal getMonto() {
@@ -37,17 +42,17 @@ public class Prestamo {
         return documentos;
     }
 
-    public void setMonto(BigDecimal monto) {
-        this.monto = monto;
-    }
+ //   private void setMonto(BigDecimal monto) {
+ //       this.monto = monto;
+ //   }
 
     public void setPlazoEnMeses(int plazoEnMeses) {
         this.plazoEnMeses = plazoEnMeses;
     }
 
-    public void setCantidadCuotas(int cantidadCuotas) {
-        this.cantidadCuotas = cantidadCuotas;
-    }
+//    public void setCantidadCuotas(int cantidadCuotas) {
+//        this.cantidadCuotas = cantidadCuotas;
+//    }
 
     public void setTasa(BigDecimal tasa) {
         this.tasa = tasa;

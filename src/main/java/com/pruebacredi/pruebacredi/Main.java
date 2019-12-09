@@ -1,5 +1,6 @@
 package com.pruebacredi.pruebacredi;
 
+import dominio.Banco;
 import dominio.Cliente;
 import dominio.Prestamo;
 import java.math.BigDecimal;
@@ -9,10 +10,17 @@ public class Main {
     public static void main(String[] args) {
       //  System.out.println("Hola Mundo!");
       
-     Prestamo miPrestamo = new Prestamo();
-     miPrestamo.setCantidadCuotas(12);     
-     BigDecimal elMonto = new BigDecimal("15500.20");
-     miPrestamo.setMonto(elMonto);
+     Banco bancoSaenz = Banco.obtenerBanco();
+     System.out.println("Banco : " + Banco.convertirAString());
+      
+     Banco.obtener("Banco 1");
+     System.out.println("Banco: " + Banco.convertirAString());
+
+     Banco.obtener("Banco 2");
+     System.out.println("Banco " + Banco.convertirAString());
+      
+     BigDecimal elMonto = new BigDecimal("15500.20"); 
+     Prestamo miPrestamo = new Prestamo(elMonto, 12);             
      miPrestamo.setPlazoEnMeses(36);     
      BigDecimal laTasa = new BigDecimal("15.50");
      miPrestamo.setTasa(laTasa);
@@ -27,8 +35,16 @@ public class Main {
      //cliente.setPrestamo(miPrestamo);
      //cliente.setDocumentoDigital(documentoDigital); 
      
+     Prestamo[] prestamoDelCliente = {miPrestamo};
+     cliente.setPrestamo(prestamoDelCliente);
+     //cliente.getPrestamo()[1]= miPrestamo;
+     
      System.out.println("Cliente creado : " + cliente.toString());
      System.out.println("Prestamo creado: " + miPrestamo.toString());
+     
+     
+
+     
    }
     
 }

@@ -16,17 +16,15 @@ public class Cliente {
     public Cliente(){
         System.out.println("Creación Cliente");
     }
-    
-    
-    public String toString(){
-        return " DNI: " + this.dni +
-           " // Nombre y Apellido: " + this.nombreApellido +
-           " // Ingresos: " +  this.ingresos +
-           " // Cuenta bancaria: " + this.cuentaBancaria +
-           " // Documentos: " + this.documentoDigital +
-           " // Domicilio: " + this.domicilio +
-           " // Prestamo : " + this.prestamo;
-    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "dni=" + dni + ", nombreApellido=" + nombreApellido +
+                ", ingresos=" + ingresos + ", prestamo=" + prestamo +
+                ", cuentaBancaria=" + cuentaBancaria + ", documentoDigital=" + 
+                documentoDigital + ", domicilio=" + domicilio + ", nombre=" + nombre + '}';
+    }    
+
     
     public Cliente(String nombreNuevo){
         System.out.println("Creación Cliente: " +  nombreNuevo);
