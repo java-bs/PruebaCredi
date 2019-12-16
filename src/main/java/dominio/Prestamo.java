@@ -3,13 +3,15 @@ package dominio;
 
 import java.math.BigDecimal;
 
-public class Prestamo {
+public abstract class Prestamo implements ImprimirDatos {
     public BigDecimal monto;
     public int plazoEnMeses;    
     public int cantidadCuotas;
     public BigDecimal tasa;
     public byte [] documentos;
+    public Banco banco;
 
+   
     @Override
     public String toString() {
         return "Prestamo{" + "monto=" + monto + ", plazoEnMeses=" + plazoEnMeses +
@@ -17,7 +19,16 @@ public class Prestamo {
                ", documentos=" + documentos + '}';
     }
 
-    public Prestamo(BigDecimal monto, int cantidadCuotas) {
+    @Override
+    public void imprimirDatos(){
+        System.out.println("Impresión: " + "monto del préstamo = " + monto +
+                ", plazo = " + plazoEnMeses + ", cantidad de cuotas = " + 
+                cantidadCuotas + ". Color de impresión: " + COLORDEFAULT );
+        
+    };
+    
+    public Prestamo(Banco banco, BigDecimal monto, int cantidadCuotas) {
+        this.banco = banco;
         this.monto = monto;
         this.cantidadCuotas = cantidadCuotas;
     }

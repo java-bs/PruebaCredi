@@ -3,6 +3,8 @@ package com.pruebacredi.pruebacredi;
 import dominio.Banco;
 import dominio.Cliente;
 import dominio.Prestamo;
+import dominio.PrestamoPersonal;
+import dominio.PrestamoPrendario;
 import java.math.BigDecimal;
 
 public class Main {
@@ -20,7 +22,7 @@ public class Main {
      System.out.println("Banco " + Banco.convertirAString());
       
      BigDecimal elMonto = new BigDecimal("15500.20"); 
-     Prestamo miPrestamo = new Prestamo(elMonto, 12);             
+     Prestamo miPrestamo = new PrestamoPersonal(bancoSaenz, elMonto, 12);             
      miPrestamo.setPlazoEnMeses(36);     
      BigDecimal laTasa = new BigDecimal("15.50");
      miPrestamo.setTasa(laTasa);
@@ -35,7 +37,11 @@ public class Main {
      //cliente.setPrestamo(miPrestamo);
      //cliente.setDocumentoDigital(documentoDigital); 
      
-     Prestamo[] prestamoDelCliente = {miPrestamo};
+     PrestamoPersonal miPrestamoPersonal = new PrestamoPersonal(bancoSaenz, elMonto, 12);
+     miPrestamoPersonal.getMonto();
+    // miPrestamoPersonal.getMonto();
+     
+     Prestamo[] prestamoDelCliente = {miPrestamo, miPrestamoPersonal};
      cliente.setPrestamo(prestamoDelCliente);
      //cliente.getPrestamo()[1]= miPrestamo;
      

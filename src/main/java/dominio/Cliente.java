@@ -92,9 +92,5 @@ public class Cliente {
     
     public void actualizarIngresos(byte nuevoDocumento, double nuevoMonto){      
     } 
-
-    public void setPrestamo(Prestamo miPrestamo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
