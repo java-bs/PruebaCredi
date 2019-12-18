@@ -40,16 +40,20 @@ public class Main {
      PrestamoPersonal miPrestamoPersonal = new PrestamoPersonal(bancoSaenz, elMonto, 12);
      miPrestamoPersonal.getMonto();
     // miPrestamoPersonal.getMonto();
+    
+     BigDecimal elMonto2 = new BigDecimal(24000); 
+     PrestamoPrendario miPrestamoPrendario = new PrestamoPrendario(bancoSaenz, elMonto2, 18);
      
-     Prestamo[] prestamoDelCliente = {miPrestamo, miPrestamoPersonal};
+          
+     Prestamo[] prestamoDelCliente = {miPrestamo, miPrestamoPersonal, miPrestamoPrendario};
      cliente.setPrestamo(prestamoDelCliente);
      //cliente.getPrestamo()[1]= miPrestamo;
      
      System.out.println("Cliente creado : " + cliente.toString());
-     System.out.println("Prestamo creado: " + miPrestamo.toString());
+     //System.out.println("Prestamo creado: " + miPrestamo.toString());
      
      
-
+     cliente.imprimirDatos();
      
    }
     

@@ -10,5 +10,11 @@ public class PrestamoPersonal extends Prestamo{
         super(banco, monto, cantidadCuotas);
     }    
  
-    
+    @Override
+    public void imprimirDatos(){
+        System.out.println("Impresión: " + "monto del préstamo = " + monto +
+                ", plazo = " + plazoEnMeses + ", cantidad de cuotas = " + 
+                cantidadCuotas + ". Color de impresión: " + COLORDEFAULT );
+        
+    };
 }

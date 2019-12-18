@@ -3,7 +3,7 @@ package dominio;
 
 import java.math.BigDecimal;
 
-public class PrestamoPrendario extends Prestamo{
+public class PrestamoPrendario extends Prestamo implements ImprimirDatos{
     
     private Garantia garantia;
 
@@ -18,5 +18,13 @@ public class PrestamoPrendario extends Prestamo{
     public void setGarantia(Garantia garantia) {
         this.garantia = garantia;
     }
+    
+    @Override
+    public void imprimirDatos(){
+        System.out.println("Impresión: PRESTAMO PRENDARIO");       
+    };
+
+
+    
     
 }

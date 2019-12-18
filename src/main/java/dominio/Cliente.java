@@ -16,17 +16,24 @@ public class Cliente {
     public Cliente(){
         System.out.println("Creación Cliente");
     }
-
-    @Override
-    public String toString() {
-        return "Cliente{" + "dni=" + dni + ", nombreApellido=" + nombreApellido +
+    
+     public String toString() {            
+        String cadena = "Cliente{" + "dni=" + dni + ", nombreApellido=" + nombreApellido +
                 ", ingresos=" + ingresos + ", prestamo=" + prestamo +
                 ", cuentaBancaria=" + cuentaBancaria + ", documentoDigital=" + 
                 documentoDigital + ", domicilio=" + domicilio + ", nombre=" + nombre + '}';
+        return cadena;        
     }    
 
+    public void imprimirDatos(){
+       System.out.println("Cliente{" + "dni=" + dni + ", nombreApellido=" + nombreApellido);
+     //  for ( int i=0; i<this.prestamo.length; i++ ) {
+        for (Prestamo prestamo : this.prestamo) {
+           prestamo.imprimirDatos();          
+        }                
+    }
     
-    public Cliente(String nombreNuevo){
+         public Cliente(String nombreNuevo){
         System.out.println("Creación Cliente: " +  nombreNuevo);
         this.nombre = nombreNuevo;
     }
