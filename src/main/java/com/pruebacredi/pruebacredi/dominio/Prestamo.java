@@ -1,7 +1,8 @@
 
-package dominio;
+package com.pruebacredi.pruebacredi.dominio;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public abstract class Prestamo implements ImprimirDatos {
     public BigDecimal monto;
@@ -10,7 +11,8 @@ public abstract class Prestamo implements ImprimirDatos {
     public BigDecimal tasa;
     public byte [] documentos;
     public Banco banco;
-
+    public LocalDate fechaAdjudicacion;
+    public LocalDate fechaAcreditacion;
    
     @Override
     public String toString() {
@@ -23,7 +25,8 @@ public abstract class Prestamo implements ImprimirDatos {
     public void imprimirDatos(){
         System.out.println("Impresión: " + "monto del préstamo = " + monto +
                 ", plazo = " + plazoEnMeses + ", cantidad de cuotas = " + 
-                cantidadCuotas + ". Color de impresión: " + COLORDEFAULT );
+                cantidadCuotas +  ", Fecha Acreditacion: " + fechaAcreditacion + 
+                ". Color de impresión: " + COLORDEFAULT );
         
     };
     
@@ -53,6 +56,23 @@ public abstract class Prestamo implements ImprimirDatos {
         return documentos;
     }
 
+    public LocalDate getFechaAdjudicacion() {
+        return fechaAdjudicacion;
+    }
+
+    public void setFechaAdjudicacion(LocalDate fechaAdjudicacion) {
+        this.fechaAdjudicacion = fechaAdjudicacion;
+    }
+
+    public LocalDate getFechaAcreditacion() {
+        return fechaAcreditacion;
+    }
+
+    public void setFechaAcreditacion(LocalDate fechaAcreditacion) {
+        this.fechaAcreditacion = fechaAcreditacion;
+    }
+
+    
  //   private void setMonto(BigDecimal monto) {
  //       this.monto = monto;
  //   }
@@ -80,5 +100,5 @@ public abstract class Prestamo implements ImprimirDatos {
      
     public void cancelarPrestamo(){               
     }
-    
+  
 }

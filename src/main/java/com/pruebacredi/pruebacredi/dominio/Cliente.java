@@ -1,6 +1,11 @@
-package dominio;
+package com.pruebacredi.pruebacredi.dominio;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Comparator;
+//import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cliente {
     
@@ -28,12 +33,27 @@ public class Cliente {
     public void imprimirDatos(){
        System.out.println("Cliente{" + "dni=" + dni + ", nombreApellido=" + nombreApellido);
      //  for ( int i=0; i<this.prestamo.length; i++ ) {
-        for (Prestamo prestamo : this.prestamo) {
-           prestamo.imprimirDatos();          
-        }                
+     
+     LocalDate date = LocalDate.now();
+          List<Prestamo> li = Arrays.asList(prestamo);
+         
+     List<Prestamo> listaFiltrada = li.stream()
+        //  .filter(pres -> pres.getFechaAcreditacion().isAfter(LocalDate.of(2019, 2, 11)))            
+            .filter(pres -> pres.getFechaAcreditacion() != null)            
+            .filter(pres -> pres.getFechaAcreditacion().isBefore(date))            
+            .collect(Collectors.toList());
+     
+      listaFiltrada.sort(Comparator.comparing(Prestamo::getFechaAcreditacion));
+       for (Prestamo prestamo : listaFiltrada) {
+         prestamo.imprimirDatos();          
+       }                                
+
+    //   for (Prestamo prestamo : this.prestamo) {
+    //     prestamo.imprimirDatos();          
+    // }                
     }
     
-         public Cliente(String nombreNuevo){
+      public Cliente(String nombreNuevo){
         System.out.println("Creación Cliente: " +  nombreNuevo);
         this.nombre = nombreNuevo;
     }

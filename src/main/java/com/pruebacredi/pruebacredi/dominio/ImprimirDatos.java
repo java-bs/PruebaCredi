@@ -1,5 +1,5 @@
 
-package dominio;
+package com.pruebacredi.pruebacredi.dominio;
 
 public interface ImprimirDatos {
     String COLORDEFAULT = "negro";

@@ -1,4 +1,4 @@
-package dominio;
+package com.pruebacredi.pruebacredi.dominio;
 
 import java.util.Date;
 

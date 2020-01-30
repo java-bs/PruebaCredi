@@ -1,4 +1,4 @@
-package dominio;
+package com.pruebacredi.pruebacredi.dominio;
 
 public class Banco {
     private static Banco instancia;  
